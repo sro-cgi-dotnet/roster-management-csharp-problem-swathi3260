@@ -1,8 +1,15 @@
 # Roster Management for a Code School
 
-**Objective**: Given cadet's names along with the wave that they are in, create a roster for the school.
-Using the RosterManagement tool you should be able to do the following:  
+## Problem: 
 
+Given cadet's names along with the wave that they are in, create a roster for the school.
+
+## Intent
+
+The intent of this assignment is to get people started with using collections in csharp.
+
+## Description
+Using the RosterManagement tool you should be able to do the following:
 - Add a cadet's name to the roster for a wave
   - "Add **Jim** to Wave **1**"
 - Get a list of all cadets enrolled in a wave
@@ -10,6 +17,7 @@ Using the RosterManagement tool you should be able to do the following:
   - "We've only got **Jim** just now."
 - Get a sorted list of all cadets in all waves. 
 - Waves should sort as 1, 2, 3, etc., and cadet's within a wave should be sorted alphabetically by name.
+
 
 **Note**: The conversations below are just used to make you understand the problem. The intent is **NOT** to build a conversational agent.
 
