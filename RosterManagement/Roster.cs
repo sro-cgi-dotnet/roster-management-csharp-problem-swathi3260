@@ -20,6 +20,18 @@ namespace RosterManagement
         /// <param name="wave">Refers to the Wave number</param>
         public void Add(string cadet, int wave)
         {
+            if(_roster.ContainsKey(wave))
+            {
+                //if wave is already there just add this name
+                _roster[wave].Add(cadet);
+            }
+            else
+            {
+                //if wave is not there add both
+                List<string> name= new List<string>();
+                name.Add(cadet);
+                _roster.Add(wave,name);
+            }
         }
 
         /// <summary>
@@ -30,6 +42,15 @@ namespace RosterManagement
         public List<string> Grade(int wave)
         {
             var list = new List<string>();
+            if(_roster.ContainsKey(wave))
+            { 
+                //if dictionary contains wave, store the names in a list and sort the list
+                foreach(string s in _roster[wave])
+                {
+                    list.Add(s);
+                }
+                list.Sort();
+            }
             return list;
         }
 
@@ -39,7 +60,17 @@ namespace RosterManagement
         /// <returns>List of Cadet's Name</returns>
         public List<string> Roster()
         {
+            var keys = _roster.Keys.ToList(); //list the keys
+            keys.Sort();//sort the keys in ascending order
             var cadets = new List<string>();
+            foreach(int i in keys)
+            {
+                _roster[i].Sort();//sort  the names in each keys
+                foreach(var st in _roster[i])
+                {
+                    cadets.Add(st);
+                }
+            }
             return cadets;
         }
     }
